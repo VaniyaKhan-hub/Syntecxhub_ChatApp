@@ -1,0 +1,96 @@
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 12px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 140, 255, 0.2);
+}
+
+/* Logo text */
+.nav-logo {
+  color: #00aaff;
+  font-size: 22px;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0, 140, 255, 0.7);
+}
+
+/* Links container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+/* Each link */
+.nav-link {
+  text-decoration: none;
+  color: #f1f1f1;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover and active glow */
+.nav-link:hover,
+.nav-link.active {
+  color: #00aaff;
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.7);
+  background: rgba(0, 140, 255, 0.1);
+  box-shadow: 0 0 12px rgba(0, 140, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Badge circle like real app */
+.badge-circle {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  animation: pop 0.3s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-logo {
+    font-size: 18px;
+  }
+}
